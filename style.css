@@ -1,0 +1,41 @@
+  :root {
+    --bg-dark: #111827;
+    --bg-light: #1F2937;
+    --text-color: #e0e0e0;
+    --accent-color: #3b82f6;
+  }
+  body { background: var(--bg-dark); color: var(--text-color); font-family: 'Inter', sans-serif; }
+
+  .card { perspective: 1000px; cursor: pointer; width: 100%; height: 16rem; }
+  .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.7s; transform-style: preserve-3d; }
+  .card.flipped .card-inner { transform: rotateY(180deg); }
+  .card-front, .card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; }
+  .card-front { background: var(--bg-light); }
+  .card-back { background: var(--accent-color); color: #fff; transform: rotateY(180deg); }
+  .card-id { position: absolute; top: 0.5rem; left: 0.5rem; background: rgba(0,0,0,0.5); color: #fff; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 0.375rem; }
+  
+  .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 50; justify-content: center; align-items: center; }
+  .modal-content { background: var(--bg-light); padding: 2rem; border-radius: 1rem; max-width: 80%; width: 90%; max-height: 90vh; overflow-y: auto; display: flex; flex-direction: column; gap:1rem; }
+  
+  .match-tile { background: var(--bg-dark); border: 2px solid var(--accent-color); border-radius: 0.75rem; padding: 1rem; text-align: center; cursor: pointer; transition: background 0.3s; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.5rem; }
+  .match-tile img { max-height: 60px; object-fit: contain; }
+  .match-tile.matched { background: #22c55e !important; cursor: default; color: #fff; }
+  .match-tile.selected { background: var(--accent-color); color: #fff; }
+  * { scrollbar-width: thin; scrollbar-color: #2c3441 transparent; }
+
+  /* Toast styles */
+  #toastContainer { position: fixed; top: 1rem; right: 1rem; display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
+  .toast { padding: 0.75rem 1.25rem; border-radius: .5rem; color:#fff; opacity:0; transform:translateX(1.5rem); transition:.3s; font-weight:600; }
+  .toast.show { opacity:1; transform:translateX(0); }
+  .toast.success { background-color: #22C55E; }
+  .toast.error { background-color: #EF4444; }
+  .toast.info { background-color: #6B7280; }
+
+  /* Textarea/Modal styles */
+  #cardsTextarea { flex: 1; width: 100%; padding: 0.5rem; background: var(--bg-dark); color: #fff; border: 2px solid transparent; border-radius: 0.5rem; font-family: monospace; resize: none; overflow-y: auto; outline: none; transition: border-color 0.2s ease-in-out; }
+  #cardsTextarea:focus { border-color: var(--accent-color); }
+
+  #createSetTextarea, #createSetModal input { transition: border-color 0.2s ease-in-out; }
+  #createSetTextarea:focus,
+  #createSetModal input:focus { border-color: var(--accent-color); outline: none; }
+  #createSetModal:focus-within { border-color: var(--accent-color); }

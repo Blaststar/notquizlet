@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="NotQuizlet" property="og:title" />
+<meta content="This isn't Quizlet" property="og:description" />
+<meta content="https://blaststar.github.io/notquizlet" property="og:url" />
+<meta content="https://i.imgur.com/ClL2TQd.png" property="og:image" />
+<meta content="#3b82f6" data-react-helmet="true" name="theme-color" />
+<title>NotQuizlet</title>
+<link rel="icon" type="image/x-icon" href="./notquizlet.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="./script.js"></script>
+<link href="./style.css" rel="stylesheet">
+
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="w-full bg-[var(--bg-light)] shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-[var(--text-color)]">Flashcards</h1>
+    <div class="flex gap-2">
+      <select id="cardsSelect" class="bg-[var(--bg-light)] text-[var(--text-color)] border border-gray-600 rounded-lg px-2 py-1 focus:outline-none focus:border-[var(--accent-color)]">
+      </select>
+      <button id="matchBtn" class="bg-[var(--accent-color)] hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">
+        Match
+      </button>
+      <button id="createSetBtn" class="bg-[var(--accent-color)] hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">
+        Create Set
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 p-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></main>
+
+  <!-- Match Modal -->
+  <div id="matchModal" class="modal">
+    <div class="modal-content">
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-bold">Match Game</h2>
+        <button id="closeMatch" class="text-red-400 hover:text-red-500 font-bold text-2xl">&times;</button>
+      </div>
+      <p id="stats" class="text-center text-lg">Time: 0s | Moves: 0</p>
+      <div id="matchGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+      <div id="result" class="hidden flex flex-col items-center gap-3">
+        <p class="text-2xl font-bold text-green-400"></p>
+        <button id="restartBtn" class="w-full bg-[var(--accent-color)] hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Set Modal -->
+  <div id="createSetModal" class="modal">
+    <div class="modal-content flex flex-col h-[80vh]">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-xl font-bold">Create / Modify Set</h2>
+        <button id="closeCreateSet" class="text-red-400 hover:text-red-500 font-bold text-2xl">&times;</button>
+      </div>
+      
+      <!-- Textarea displaying current cards JSON -->
+      <textarea id="createSetTextarea" class="flex-1 w-full p-2 bg-[var(--bg-dark)] text-white border-2 border-transparent rounded-md font-mono resize-none overflow-y-auto mb-2"></textarea>
+      
+      <!-- Inputs for new card -->
+      <div class="flex flex-col gap-2 mb-2">
+        <input id="termInput" type="text" placeholder="Term" class="p-2 rounded border border-gray-600 bg-[var(--bg-light)] text-[var(--text-color)]">
+        <input id="definitionInput" type="text" placeholder="Definition" class="p-2 rounded border border-gray-600 bg-[var(--bg-light)] text-[var(--text-color)]">
+        <input id="imageInput" type="text" placeholder="Image URL (optional)" class="p-2 rounded border border-gray-600 bg-[var(--bg-light)] text-[var(--text-color)]">
+        <button id="addCardBtn" class="bg-[var(--accent-color)] hover:bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">Add Card</button>
+      </div>
+      
+      <!-- Clear & Copy buttons -->
+      <div class="flex gap-2">
+        <button id="clearSetBtn" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">Clear</button>
+        <button id="copySetBtn" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer"></div>
+</body>
+</html>
