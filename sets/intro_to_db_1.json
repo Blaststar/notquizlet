@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "term": "Table",
+    "definition": "A two-dimensional grid characterized by rows and columns",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "term": "Row",
+    "definition": "A single record in a table",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "term": "Column",
+    "definition": "A set of data values of a defined type in a table",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "term": "Primary Key",
+    "definition": "A unique identifier for a record in a table",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "term": "Foreign Key",
+    "definition": "A field in one table that uniquely identifies a row of another table",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "term": "Relational Model",
+    "definition": "A way to structure data using tables.",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "term": "Set Theory",
+    "definition": "A mathematical theory that deals with collections of objects",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "term": "User Tables",
+    "definition": "Store user defined data",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "term": "System Tables",
+    "definition": "Store metadata - data about the database",
+    "image": ""
+  },
+  {
+    "id": 10,
+    "term": "Database",
+    "definition": "An organized collection of data consisting of multiple tables",
+    "image": ""
+  },
+  {
+    "id": 11,
+    "term": "Parent Table",
+    "definition": "A table whose primary key is referenced by a child table",
+    "image": ""
+  },
+  {
+    "id": 12,
+    "term": "Child Table",
+    "definition": "A table that contains data related to a specific entity in a relational database, often linked to a parent table through a foreign key.",
+    "image": ""
+  },
+  {
+    "id": 13,
+    "term": "Referential Integrity",
+    "definition": "A property that ensures relationships between tables remain consistent",
+    "image": ""
+  },
+  {
+    "id": 14,
+    "term": "Junction Table",
+    "definition": "A table used to connect two or more tables in a Many to Many relationship",
+    "image": ""
+  },
+  {
+    "id": 15,
+    "term": "Entity-Relationship Diagram (ERD)",
+    "definition": "A visual representation of the entities in a database and their relationships.",
+    "image": ""
+  },
+  {
+    "id": 16,
+    "term": "Simple Key",
+    "definition": "A single column in a database table that is used to uniquely identify a row.",
+    "image": ""
+  },
+  {
+    "id": 17,
+    "term": "Composite Key",
+    "definition": "A combination of two or more columns in a database table that can uniquely identify a row in that table.",
+    "image": ""
+  },
+  {
+    "id": 18,
+    "term": "One to One",
+    "definition": "A relationship where a single record in one table is associated with a single record in another table.",
+    "image": "https://database.guide/wp-content/uploads/2024/09/one-to-one-relationship-1024x357.png"
+  },
+  {
+    "id": 19,
+    "term": "One to Many",
+    "definition": "A relationship where a single record in one table can be associated with multiple records in another table.",
+    "image": "https://database.guide/wp-content/uploads/2024/09/one-to-many-relationship-1024x357.png"
+  },
+  {
+    "id": 20,
+    "term": "Many to Many",
+    "definition": "A relationship where multiple records in one table can be associated with multiple records in another table.",
+    "image": "https://database.guide/wp-content/uploads/2024/09/many-to-many-relationship-1024x350.png"
+  }
+]
