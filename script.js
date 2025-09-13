@@ -104,6 +104,25 @@ document.addEventListener("DOMContentLoaded", () => {
       return arr;
   }
 
+  function normalizeMatchCardSizes() {
+        const cards = document.querySelectorAll(".match-tile");
+        if (cards.length === 0) return;
+        let maxWidth = 0;
+        let maxHeight = 0;
+        cards.forEach(card => {
+            card.style.width = "auto";
+            card.style.height = "auto";
+        });
+        cards.forEach(card => {
+            maxWidth = Math.max(maxWidth, card.offsetWidth);
+            maxHeight = Math.max(maxHeight, card.offsetHeight);
+        });
+        cards.forEach(card => {
+            card.style.width = maxWidth + "px";
+            card.style.height = maxHeight + "px";
+        });
+    }
+
   function startMatchGame() {
       matchGrid.innerHTML = "";
       resultEl.classList.add("hidden");
@@ -127,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       div.addEventListener("click", () => handleTileClick(div));
       matchGrid.appendChild(div);
       });
+      normalizeMatchCardSizes();
       startTime = Date.now();
       updateStats();
       timerInterval = setInterval(updateStats,500);
