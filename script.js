@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultEl = document.getElementById("result");
   const restartBtn = document.getElementById("restartBtn");
 
-  let startTime, timerInterval, selected = [], matchedCount = 0, moves = 0;
+  let startTime, timerInterval, selected = [], matchCards = [], matchedCount = 0, moves = 0;
 
   function getRandomItems(arr, count) {
       const shuffled = arr.slice();
@@ -124,14 +124,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   function startMatchGame() {
+      matchCards = [];
       matchGrid.innerHTML = "";
       resultEl.classList.add("hidden");
       matchedCount = 0;
       selected = [];
       moves = 0;
       let tiles = [];
-      if (currentSet.length > 6) currentSet = getRandomItems(currentSet,6);
-      currentSet.forEach(c => {
+      if (currentSet.length > 6) matchCards = getRandomItems(currentSet, 6);
+      matchCards.forEach(c => {
       tiles.push({id:c.id,type:"q",text:c.term,image:c.image});
       tiles.push({id:c.id,type:"a",text:c.definition});
       });
