@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
           t1.classList.remove("selected"); t2.classList.remove("selected");
           t1.classList.add("matched"); t2.classList.add("matched");
           matchedCount++;
-          if(matchedCount===currentSet.length) endMatchGame();
+          if(matchedCount===matchCards.length) endMatchGame();
       } else {
           setTimeout(()=>{t1.classList.remove("selected"); t2.classList.remove("selected");},800);
       }
