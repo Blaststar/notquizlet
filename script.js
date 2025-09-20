@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderFlashcards() {
       main.innerHTML = "";
       currentSet.forEach(card => {
-        console.log(card.definition)
       if (!card.term) return currentSet = currentSet.filter(c => c !== card);
       const cardEl = document.createElement("div");
       cardEl.className = "card";
